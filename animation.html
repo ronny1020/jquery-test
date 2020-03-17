@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#animation").click(function() {
+                loop()
+            });
+
+            function loop() {
+                var div = $("#div");
+                div.animate({
+                    height: '500px',
+                    opacity: '0.4',
+                    fontSize: '3em'
+                }, "fast");
+
+                div.animate({
+                    width: '500px',
+                    opacity: '0.8'
+                }, "fast");
+
+                div.animate({
+                    height: '100px',
+                    opacity: '0.4'
+                }, "fast");
+
+                div.animate({
+                    width: '100px',
+                    opacity: '0.8',
+                    fontSize: '1em'
+                }, "fast");
+
+                loop();
+            }
+
+
+
+
+            $("#stop").click(function() {
+                $("#div").stop(true);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button id="animation">Animation</button>
+    <button id="stop">Stop</button>
+
+    <div id="div" style="background:red;height:100px;width:100px;position:absolute;">HELLO WORLD</div>
+
+</body>
+
+</html>
